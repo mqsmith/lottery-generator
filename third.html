@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Generate Georgia Phone Numbers!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Generate Georgia Phone Numbers!</h1>
+        <button type="button" id="guess" class="btn btn-lg btn-primary">?</button>
+    </div>
+
+    <div class="container text-center">
+        <div class="results">
+
+        </div>
+
+
+
+    </div>
+
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <script type="text/javascript">
+
+        var areaCodes = ["229", "404", "470", "478", "678", "706", "762", "770", "912"];
+
+        $(document).ready(function () {
+
+            $("#guess").on("click", function () {
+                var numbers1 = "";
+                var numbers2 = "";
+                for (var i = 0; i < 3; i++) {
+                    var random1 = Math.floor(Math.random() * 3) + 1;
+                    numbers1 = random1 + numbers1;
+                }
+                for (var i = 0; i < 4; i++) {
+                    var random2 = Math.floor(Math.random() * 4) + 1;
+                    numbers2 = random2 + numbers2;
+                }
+                var areaCode = areaCodes[Math.floor(Math.random() * areaCodes.length)];
+
+                $(".results").append("<be><hr><h1>" + "(" + areaCode + ")" + " " + numbers1 + "-" + numbers2 + "<h1>");
+            })
+        });
+
+        var numbers3 = "";
+        function generateNums() {
+            for (var i = 0; i < 7; i++) {
+                var random3 = Math.floor(Math.random() * 7) + 1;
+                numbers3 = random3 + numbers3;
+            }
+
+        };
+
+        generateNums();
+        console.log(numbers3);
+
+        var numSplit = numbers3.split("", numbers3.length);
+        console.log(numSplit);
+        numSplit.splice(3, 0, "-");
+        console.log(numSplit);
+        var good = numSplit.join('');
+        console.log(good);
+
+
+    </script>
+</body>
+
+</html>
