@@ -9,20 +9,57 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Lucky Numbers</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
 <body>
 
 
+    <div class="jumbotron text-center">
+        <h1>
+            Felling Lucky? Hit the button below!
+        </h1>
+        <div id="ladyLuck">
+            <button type="button" class="btn btn-success btn-lg">Lady Luck</button>
+        </div>
+
+    </div>
+
+    <div>
+        <h1 id="number">
+
+        </h1>
+    </div>
+
 
 
     <script type="text/javascript">
+        function generateRandomNumber() {
+            let stringToReturn = "";
+            for (i = 0; i < 9; i++) {
+
+                var number = Math.floor(Math.random() * 10);
+                // console.log(number);
+                stringToReturn+= number;
+
+            }
+            return stringToReturn;
+        }
+
+        $("#ladyLuck").click(function () {
+            $("#number").text(generateRandomNumber());
+        });
+
+
+
+
     </script>
 </body>
 
