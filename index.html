@@ -12,17 +12,49 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--Added link to the Bootstrap Library-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 
 <body>
 
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Lottery Generator</h1>
+        <div id=random-button>
+            <button type="button" class="btn btn-primary">?</button>
+        </div>
+    </div>
 
-
-
+    <h1 class="text-center" id="random-number"></h1>
+    
     <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            $("#random-button").on("click", function () {
+
+
+                var randomNumber = "";
+
+
+                for (var i = 0; i < 9; i++) {
+                    var random = Math.floor(Math.random() * 9) + 1;
+
+
+                    randomNumber = random + randomNumber;
+                    console.log(randomNumber);
+                }
+
+
+                $("#random-number").prepend("<br><hr>" + randomNumber);
+            });
+        });
     </script>
 </body>
 
