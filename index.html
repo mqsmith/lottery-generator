@@ -32,8 +32,8 @@
 
     </div>
 
-    <div>
-        <h1 id="number">
+    <div id="container" class="text-center">
+        <h1 id="number" class="text-center">
 
         </h1>
     </div>
@@ -53,8 +53,11 @@
             return stringToReturn;
         }
 
+        // $("#ladyLuck").click(function () {
+        //     $("#container").prepend("<br><hr>" + generateRandomNumber());
+        // });
         $("#ladyLuck").click(function () {
-            $("#number").text(generateRandomNumber());
+            $("#container").prepend("<h1>" + generateRandomNumber() + "</h1>");
         });
 
 
