@@ -14,16 +14,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 
 <body>
+    <div class="container">
+        <div class="jumbotron text-center">THE MF LOTTERY MACHINEEE (mega fine since 1969)</div>
+
+        <div class="align-middle"><button class="btn btn-primary text-center" id="roll-em" onclick="rollEm()">ROLL tEH DIcE BOI</button>
+        </div>
+        <div id="numbers">
 
 
 
+        </div>
+        <script type="text/javascript">
+            var lottoList = [];
+            var numbersDiv = $("#numbers");
 
-    <script type="text/javascript">
-    </script>
+            function getRndInt(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            function rollEm() {
+                randomNumber = getRndInt(100000000, 999999999);
+                lottoList.push(randomNumber);
+                console.log(lottoList);
+                $.each(lottoList, function(i, numero) {
+                    numbersDiv.append("<div>" + numero[i] + "</div>");
+                });
+
+            };
+        </script>
 </body>
 
-</html>
+</html>;
